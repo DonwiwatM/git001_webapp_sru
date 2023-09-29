@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
-    'members'
+    'members',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -125,10 +126,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_ROOT = '/media/'
 
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "website/static")
+    os.path.join(BASE_DIR, "static")
 ]
 
 # Default primary key field type

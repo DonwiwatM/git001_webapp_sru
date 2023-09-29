@@ -12,6 +12,7 @@ class PostView(ListView):
     template_name = 'postpage.html'
     cats = Category.objects.all()
     ordering = ['-post_date']
+    
     def get_context_data(self, *args, **kwargs):
         cat_menu = Category.objects.all()
         context = super(PostView, self).get_context_data(*args, **kwargs)
@@ -23,7 +24,7 @@ def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats.replace('-',''))
     return render(request, 'categories.html', {'cats': cats.replace('-','').title(), 'category_post': category_posts})
 
-def CategoryListView(request, cats):
+def CategoryListView(request):
     cat_menu_list = Category.objects.all()
     return render(request, 'category_list.html', {'cat_menu_list':cat_menu_list})
 
